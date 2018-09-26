@@ -7,20 +7,21 @@ int main()
     while (cin >> n){
     	
     	int a, b;
-        int check[3001]={0};
+        int diff_a[3001]={0};
+        int dif;
         bool f = true;
 
         scanf("%d",&b);
         for (int i = 1; i < n; i++){
             scanf("%d",&a);
-            int temp = abs(a-b);
+            dif = abs(a-b);
             b = a;
-            if (temp<=3000)
-				check[temp]++;
+            if (dif<=3000)
+				diff_a[dif]++;
         }
 
         for (int i = 1; i < n; i++)
-            if (check[i] == 0){
+            if (diff_a[i] == 0){
 				f = false;
 				break;
 			}
